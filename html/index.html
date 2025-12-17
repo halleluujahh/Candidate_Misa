@@ -1,0 +1,1753 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/pages/style.css" />
+    <link rel="stylesheet" href="../css/base/commons.css" />
+    <link rel="stylesheet" href="../css/components/modal.css" />
+    <link rel="stylesheet" href="../css/components/toast.css" />
+    <title>
+      Ứng viên | CÔNG TY CỔ PHẦN SỬA CHỮA NHIỆT ĐIỆN BẮC NAM | AMIS Tuyển dụng
+    </title>
+  </head>
+  <body>
+    <!-- ==================== HEADER SECTION ==================== -->
+    <header>
+      <div class="app-navbar">
+        <div class="navbar-wrap">
+          <div class="navbar-left-container">
+            <div class="navbar-title d-flex align-items-center p-l-16">
+              <div class="booking-title pointer">
+                <div class="navbar-icon icon-switch pointer"></div>
+              </div>
+              <div class="pos-relative mx-3">
+                <div class="navbar-logo-container pointer">
+                  <div class="navbar-icon logo-recruiment"></div>
+                </div>
+                <div class="navbar-bg"></div>
+              </div>
+              <div class="title-name pointer m-r-24">Tuyển dụng</div>
+            </div>
+            <div class="wrap-navbar-search d-flex align-items-center">
+              <div class="navbar-search">
+                <div class="text-editor-container">
+                  <div class="text-editor">
+                    <div class="icon-search"></div>
+                    <input
+                      oninput="onInputChange()"
+                      id="text-editor-input"
+                      autocomplete="off"
+                      placeholder="Tìm kiếm tin tuyển dụng, ứng viên, nhân tài..."
+                    />
+                  </div>
+                  <div class="text-editor-button-container">
+                    <span class="clear-button-area">
+                      <span
+                        class="icon-clear"
+                        onclick="clearSearchInput()"
+                      ></span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="navbar-right-container">
+            <div
+              onclick="targetBlankRecruitmentLinks()"
+              class="recruiment-page d-flex pointer m-r-20 no-bg btn-secondary-2 no-box-shadow-hover"
+            >
+              <div class="icon-global m-r-10 m-t-3"></div>
+              <div class="icon-text">Website tuyển dụng</div>
+            </div>
+            <div class="notification-icon-container">
+              <div class="icon-notification"></div>
+            </div>
+            <div class="integration-cart mr-3">
+              <div class="cs-store">
+                <div class="store-icon"></div>
+                <div class="store-notice">2</div>
+              </div>
+            </div>
+            <div class="user-control-panel d-flex">
+              <div class="invite-box apui-user-controlpanel-item"></div>
+              <div class="message-box apui-user-controlpanel-item"></div>
+              <div class="noti-box apui-user-controlpanel-item">
+                <div class="noti-number">4</div>
+              </div>
+              <div class="help-menu apui-user-controlpanel-item"></div>
+              <div class="more-menu apui-user-controlpanel-item"></div>
+              <div class="knowledge-menu apui-user-controlpanel-item"></div>
+              <div class="user-menu apui-user-controlpanel-item">
+                <div class="avatar-account">
+                  <img
+                    src="https://amisplatform.misacdn.net/APIS/PlatformAPI/api/Avatar/77b8feac-dfe5-4b47-b1ff-ac9a2eaced5a/LT0YJBOP.jpg?avatarID=03762a31-c8c5-45ae-887b-17bcdc47043b&width=64&height=64"
+                    alt="avatar"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- ==================== END HEADER ==================== -->
+
+    <!-- ==================== MAIN SECTION ==================== -->
+    <main>
+      <!-- ========== SIDEBAR SECTION ========== -->
+      <div class="app-sidebar">
+        <div id="sidebar" class="sidebar-expand-mode">
+          <div class="sidebar-item-list">
+            <div class="sidebar-container">
+              <div class="sidebar-item pointer">
+                <a href="#">
+                  <div
+                    class="item-content d-flex h-100 align-items-center pos-relative"
+                  >
+                    <div class="icon-sb-recruiment item-icon"></div>
+                    <div class="icon-text" title="Tin tuyển dụng">
+                      Tin tuyển dụng
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="sidebar-item pointer">
+                <a href="#">
+                  <div
+                    class="item-content d-flex h-100 align-items-center pos-relative checked"
+                  >
+                    <div class="icon-sb-candidate item-icon"></div>
+                    <div class="icon-text active" title="Ứng viên">
+                      Ứng viên
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="sidebar-item pointer">
+                <a href="#">
+                  <div
+                    class="item-content d-flex h-100 align-items-center pos-relative"
+                  >
+                    <div class="icon-sb-calendar item-icon"></div>
+                    <div class="icon-text" title="Lịch">Lịch</div>
+                  </div>
+                </a>
+              </div>
+              <div class="sidebar-item pointer">
+                <a href="#">
+                  <div
+                    class="item-content d-flex h-100 align-items-center pos-relative"
+                  >
+                    <div class="icon-sb-talent-pools item-icon"></div>
+                    <div class="icon-text" title="Kho tiềm năng">
+                      Kho tiềm năng
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="sidebar-item pointer">
+                <a href="#">
+                  <div
+                    class="item-content d-flex h-100 align-items-center pos-relative"
+                  >
+                    <div
+                      class="icon-sb-recruiment-campaign-active item-icon"
+                    ></div>
+                    <div class="icon-text" title="Chiến dịch tuyển dụng">
+                      Chiến dịch tuyển dụng
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="sidebar-item pointer">
+                <a href="#">
+                  <div
+                    class="item-content d-flex h-100 align-items-center pos-relative"
+                  >
+                    <div class="icon-sb-task item-icon"></div>
+                    <div class="icon-text" title="Công việc">Công việc</div>
+                  </div>
+                </a>
+              </div>
+              <div class="sidebar-item pointer">
+                <a href="#">
+                  <div
+                    class="item-content d-flex h-100 align-items-center pos-relative"
+                  >
+                    <div class="icon-email-ai-marketing item-icon"></div>
+                    <div class="icon-text" title="aiMarketing">aiMarketing</div>
+                  </div>
+                </a>
+              </div>
+              <div class="sidebar-item pointer">
+                <a href="#">
+                  <div
+                    class="item-content d-flex h-100 align-items-center pos-relative"
+                  >
+                    <div class="icon-chat-box item-icon"></div>
+                    <div class="icon-text" title="Trao đổi với ứng viên">
+                      Trao đổi với ứng viên
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="sidebar-item pointer">
+                <a href="#">
+                  <div
+                    class="item-content d-flex h-100 align-items-center pos-relative"
+                  >
+                    <div class="icon-sb-report item-icon"></div>
+                    <div class="icon-text" title="Báo cáo">Báo cáo</div>
+                  </div>
+                </a>
+              </div>
+              <div class="sidebar-item pointer">
+                <a href="#">
+                  <div
+                    class="item-content d-flex h-100 align-items-center pos-relative"
+                  >
+                    <div class="icon-sb-setting item-icon"></div>
+                    <div class="icon-text" title="Khác">Khác</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="bottom-area pos-absolute w-100">
+              <div
+                onclick="collapseSidebar()"
+                class="collapse-btn d-flex align-items-center pointer border"
+              >
+                <div id="icon-left" class="item-icon icon-left"></div>
+                <div
+                  id="collapsed-text"
+                  class="icon-text text-content collapsed-text-show"
+                >
+                  Thu gọn
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ========== END SIDEBAR ========== -->
+
+      <!-- ========== MAIN CONTENT SECTION ========== -->
+      <div
+        class="recruiment-app-content-container-expand"
+        id="recruiment-app-content-container"
+      >
+        <!-- ========== APP CANDIDATES SECTION ========== -->
+        <div class="app-candidates">
+          <div class="app-candidates-layout d-flex dis-flex-grow dis-flex-row">
+            <div
+              class="list-candidate-center d-flex dis-flex-grow dis-flex-column"
+            >
+              <div class="title-header">
+                <div class="title-left">Ứng viên</div>
+                <div class="title-right d-flex">
+                  <button
+                    onclick="openAddCandidateModal()"
+                    type="button"
+                    class="btn btn-primary item-head-left"
+                  >
+                    <div class="icon-add"></div>
+                    <span class="title-name pl-2">Thêm ứng viên</span>
+                  </button>
+                  <div
+                    class="more-insert-option d-flex justify-content-center align-items-center"
+                  >
+                    <div class="btn-dropdown">
+                      <div class="toggle-down">
+                        <div class="icon-down"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="candidates-wrapper">
+                <div class="candidates-wrapper-content d-flex flex-col">
+                  <div class="candidate-wrapper-content-grid">
+                    <div class="toolbar-grid bg-white">
+                      <div
+                        class="toolbar-container d-flex align-items-center justify-content-between"
+                      >
+                        <div id="toolbar-grid" class="toolbar-grid-default">
+                          <div class="toolbar-grid-left">
+                            <div class="search-grid d-flex">
+                              <div class="search-ontab">
+                                <div class="texteditor-container">
+                                  <div class="button-container">
+                                    <div class="ai-search">
+                                      <div class="button-content">
+                                        <i class="search"></i>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="input-container">
+                                    <input
+                                      class="text-editor-input"
+                                      type="search"
+                                      placeholder="Tìm kiếm hoặc nhờ AI trợ giúp"
+                                      autocomplete="off"
+                                      oninput="findCandidateByFullNameEmailPhone(this.value)"
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="toolbar-grid-right">
+                            <div
+                              class="filter-area wrap-icon-button-toolbar m-r-8"
+                              title="Bộ lọc"
+                            >
+                              <div class="icon-filter ic-svg"></div>
+                            </div>
+                            <div
+                              class="wrap-icon-button-toolbar m-r-8"
+                              title="Xuất khẩu"
+                            >
+                              <div class="icon-export ic-svg"></div>
+                            </div>
+                            <div
+                              class="wrap-icon-button-toolbar m-r-8"
+                              title="Xem nhanh hoạt động"
+                            >
+                              <div
+                                class="icon-interactive-history ic-svg"
+                              ></div>
+                            </div>
+                            <div class="z-index-default dropdown">
+                              <div class="wrap-icon-button-setting">
+                                <div class="icon-setting ic-svg"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="table-candidate">
+                      <div class="table-wrap">
+                        <table class="candidates-table">
+                          <thead>
+                            <tr>
+                              <th class="col-checkbox" id="select-all">
+                                <input
+                                  type="checkbox"
+                                  id="select-all-input"
+                                  aria-label="select all"
+                                  onchange="checkboxSelectAllCandidateToggle(this)"
+                                />
+                              </th>
+                              <th>Số điện thoại</th>
+                              <th>Nguồn ứng viên</th>
+                              <th>Họ và tên</th>
+                              <th>Email</th>
+                              <th>Chiến dịch tuyển dụng</th>
+                              <th>Vị trí tuyển dụng</th>
+                              <th>Tin tuyển dụng</th>
+                              <th>Vòng tuyển dụng</th>
+                              <th>Đánh giá</th>
+                              <th>Ngày ứng tuyển</th>
+                              <th>Trình độ đào tạo</th>
+                              <th>Nơi đào tạo</th>
+                              <th>Chuyên ngành</th>
+                              <th>Nơi làm việc gần đây</th>
+                              <th>Nhân sự khai thác</th>
+                              <th>Đơn vị sử dụng</th>
+                              <th>Phù hợp với chân dung</th>
+                              <th>Khu vực</th>
+                              <th>Người giới thiệu</th>
+                              <th>Thông tin tiếp nhận</th>
+                              <th>Thuộc kho tiềm năng</th>
+                              <th class="col-action"></th>
+                            </tr>
+                          </thead>
+                          <tbody id="candidate-table-body"></tbody>
+                        </table>
+                      </div>
+
+                      <div class="table-footer">
+                        <div class="table-footer-content">
+                          <div class="total">
+                            Tổng: <strong id="total-candidates">0</strong> bản
+                            ghi
+                          </div>
+                          <div class="pagination-area">
+                            <label class="per-page"
+                              >Số bản ghi/trang
+                              <select
+                                id="per-page-selection"
+                                onchange="changePageSize()"
+                              >
+                                <option value="10">10</option>
+                                <option value="25">25</option>
+                                <option value="50">50</option>
+                              </select>
+                            </label>
+                            <div class="page-info">1 - 25 bản ghi</div>
+                            <div
+                              id="previous-page"
+                              onclick="previousPage()"
+                              class="icon-l pointer disabled"
+                            ></div>
+                            <div
+                              id="next-page"
+                              onclick="nextPage()"
+                              class="icon-r pointer"
+                            ></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- ========== END APP CANDIDATES ========== -->
+      </div>
+      <!-- ========== END MAIN CONTENT ========== -->
+    </main>
+    <!-- ==================== END MAIN SECTION ==================== -->
+
+    <!-- ==================== MODALS SECTION ==================== -->
+
+    <!-- Add Candidate Modal Start -->
+    <div
+      id="add-candidate-modal"
+      class="overlay-modal overlay-modal-hide d-flex justify-content-center align-items-center"
+    >
+      <div class="overlay-modal-content">
+        <div class="modal-container">
+          <div class="modal-header">
+            <div id="title-modal" class="title">Thêm ứng viên</div>
+            <div class="close-icon" onclick="closeModal()"></div>
+          </div>
+          <div class="modal-body">
+            <div class="scroll-view">
+              <div class="scroll-wrapper">
+                <div class="file-import">
+                  <div class="wrap-file">
+                    <div class="file-info">
+                      <div class="file-msg">
+                        Kéo thả hoặc bấm vào đây để tải CV lên
+                      </div>
+                      <div class="file-msg2">
+                        Chấp nhận file .doc, .docx, .pdf, .jpg, .jpeg, .png
+                        <span> (Dung lượng < hơn 15 Mb) </span>
+                      </div>
+                    </div>
+                  </div>
+                  <input
+                    id="file-input"
+                    type="file"
+                    accept=".docx, .pdf, .doc, .jpg, .jpeg, .png"
+                  />
+                </div>
+                <div class="info-candidate">
+                  <div class="avatar-candidate">
+                    <div class="avatar-modal">
+                      <div class="show-image">
+                        <span class="image">Ảnh</span>
+                      </div>
+                      <input type="file" accept="image/*" hidden />
+                    </div>
+                  </div>
+                  <div class="input-info">
+                    <div class="right-content">
+                      <!-- Họ tên Start -->
+                      <div class="input-fullname">
+                        <div class="label-input">
+                          Họ và tên <span class="color-red">*</span>
+                        </div>
+                        <div class="field-container">
+                          <input
+                            id="fullname"
+                            class="field-input"
+                            type="text"
+                            maxlength="255"
+                            placeholder="Nhập họ và tên"
+                            oninput="validateCandidateData()"
+                          />
+                          <div
+                            class="error-message d-none"
+                            id="fullname-error-message"
+                          ></div>
+                        </div>
+                      </div>
+                      <!-- Họ tên End -->
+                      <!-- Ngày sinh, giới tính Start -->
+                      <div class="input-dup">
+                        <div class="dup-row">
+                          <div
+                            class="label-input d-flex justify-content-between align-items-flex-start"
+                          >
+                              <div>Ngày sinh</div>
+                              <div class="format-date">
+                                <div
+                                  class="dropdown-toggle pointer d-flex align-items-center"
+                                  onclick="openDateTimeModal()"
+                                >
+                                  <b
+                                    class="dropdown-text m-r-8"
+                                    id="dropdown-text-datetime"
+                                  >
+                                    Ngày tháng năm
+                                  </b>
+                                  <div class="dropdown-icon"></div>
+                                  <!-- dropdown datetime here -->
+                                  <div
+                                    id="display-datetime-modal"
+                                    class="datetime-dropdown datetime-dropdown-hide"
+                                  >
+                                    <div
+                                      class="dropdown-item d-flex align-items-center"
+                                      id="choosed-year"
+                                      onclick="changeInputDateType(this)"
+                                    >
+                                      <div>Năm</div>
+                                    </div>
+                                    <div
+                                      class="dropdown-item d-flex align-items-center"
+                                      id="choosed-month-year"
+                                      onclick="changeInputDateType(this)"
+                                    >
+                                      <div>Tháng năm</div>
+                                    </div>
+                                    <div
+                                      class="dropdown-item d-flex align-items-center"
+                                      id="choosed-day-month-year"
+                                      onclick="changeInputDateType(this)"
+                                    >
+                                      <div>Ngày tháng năm</div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                          </div>
+                          <div
+                            class="field-container d-flex align-items-center"
+                          >
+                            <input
+                              oninput="formatInputTypeOnInput(this)"
+                              onblur="formatInputTypeOnBlur(this)"
+                              type="text"
+                              maxlength="10"
+                              role="combobox"
+                              spellcheck="false"
+                              aria-haspopup="true"
+                              class="field-input"
+                              autocomplete="off"
+                              id="birthdate"
+                              placeholder="dd/MM/yyyy"
+                              class="datetime-input"
+                            />
+                            <div id="calendar" class="calendar-setting pointer">
+                              <div class="icon-calendar-vertical"></div>
+                            </div>
+                            <input type="date" id="realDate" hidden />
+                          </div>
+                          <div
+                            class="error-message d-none"
+                            id="birthdate-error-message"
+                          ></div>
+                        </div>
+                        <div class="dup-row">
+                          <div class="label-input">Giới tính</div>
+                          <div class="field-container">
+                            <select
+                              class="field-input"
+                              type="text"
+                              placeholder="Chọn giới tính"
+                              id="gender"
+                            >
+                              <option value="">Chọn giới tính</option>
+                              <option value="Male">Nam</option>
+                              <option value="Female">Nữ</option>
+                            </select>
+                            <div
+                              class="error-message d-none"
+                              id="gender-error-message"
+                            ></div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Ngày sinh, giới tính End -->
+                      <div class="input-area">
+                        <div class="label-input">Khu vực</div>
+                        <div class="field-container d-flex align-items-center">
+                          <select
+                            id="region"
+                            class="field-input"
+                            placeholder="Khu vực"
+                          >
+                            <option value="">Chọn khu vực</option>
+                            <option value="Cầu Giấy">Cầu Giấy</option>
+                            <option value="Tây Hồ">Tây Hồ</option>
+                            <option value="Thanh Xuân">Thanh Xuân</option>
+                            <option value="Gia Lâm">Gia Lâm</option>
+                            <option value="Bắc Từ Liêm">Bắc Từ Liêm</option>
+                          </select>
+                          <div class="dictionary-setting pointer">
+                            <div class="icon-more-vertical"></div>
+                          </div>
+                        </div>
+                        <div
+                          class="error-message d-none"
+                          id="region-error-message"
+                        ></div>
+                      </div>
+                      <!-- SĐT, Email Start -->
+                      <div class="input-dup">
+                        <div class="dup-row">
+                          <div
+                            class="label-input d-flex justify-content-between"
+                          >
+                            <div>Số điện thoại</div>
+                          </div>
+
+                          <div class="field-container">
+                            <input
+                              type="text"
+                              oninput="validateCandidateData()"
+                              class="field-input"
+                              placeholder="Nhập số điện thoại"
+                              id="phone"
+                            />
+                            <div
+                              class="error-message d-none"
+                              id="phone-error-message"
+                            ></div>
+                          </div>
+                        </div>
+                        <div class="dup-row">
+                          <div class="label-input">Email</div>
+                          <div class="field-container">
+                            <input
+                              class="field-input"
+                              type="email"
+                              placeholder="Nhập email"
+                              id="email"
+                              oninput="validateCandidateData()"
+                            />
+                            <div
+                              class="error-message d-none"
+                              id="email-error-message"
+                            ></div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- SĐT, Email End -->
+                      <div class="input-address">
+                        <div class="label-input">Địa chỉ</div>
+                        <div class="field-container">
+                          <input
+                            type="text"
+                            class="field-input"
+                            placeholder="Nhập địa chỉ"
+                            id="address"
+                          />
+                          <div
+                            class="error-message d-none"
+                            id="address-error-message"
+                          ></div>
+                        </div>
+                      </div>
+                      <!-- Học vấn Start -->
+                      <div class="input-college">
+                        <div class="label-input">Học vấn</div>
+                        <div id="education-input-cluster">
+                          <div class="education-info d-flex">
+                            <div
+                              class="d-flex justify-content-between align-items-center education-info-item"
+                            >
+                              <div
+                                class="label-input d-flex align-items-center"
+                              >
+                                <div class="icon-dot"></div>
+                                <div class="label-input">Trình độ đào tạo</div>
+                              </div>
+                              <input
+                                id="level"
+                                class="field-input"
+                                type="text"
+                                maxlength="255"
+                                placeholder="Nhập trình độ đào tạo"
+                              />
+                              <span class="icon-plus plus-input"></span>
+                              <div class="arrow-setting pointer">
+                                <div class="icon-arrow-down"></div>
+                              </div>
+                              <span
+                                class="icon-sub sub-input sub-input-hide"
+                                onclick="removeEducation(e)"
+                              ></span>
+                            </div>
+                            <div
+                              class="d-flex justify-content-between align-items-center education-info-item"
+                            >
+                              <div
+                                class="label-input d-flex align-items-center"
+                              >
+                                <div class="icon-dot"></div>
+                                <div class="label-input">Nơi đào tạo</div>
+                              </div>
+                              <input
+                                id="location"
+                                class="field-input"
+                                type="text"
+                                maxlength="255"
+                                placeholder="Nhập nơi đào tạo"
+                              />
+                              <span class="icon-plus plus-input"></span>
+                              <div class="arrow-setting pointer">
+                                <div class="icon-arrow-down"></div>
+                              </div>
+                            </div>
+                            <div
+                              class="d-flex justify-content-between align-items-center education-info-item"
+                            >
+                              <div
+                                class="label-input d-flex align-items-center"
+                              >
+                                <div class="icon-dot"></div>
+                                <div class="label-input">Chuyên ngành</div>
+                              </div>
+                              <input
+                                id="major"
+                                class="field-input"
+                                type="text"
+                                maxlength="255"
+                                placeholder="Nhập chuyên ngành"
+                              />
+                              <span class="icon-plus plus-input"></span>
+                              <div class="arrow-setting pointer">
+                                <div class="icon-arrow-down"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="d-flex align-items-center pointer mb-2"
+                        onclick="addEducation()"
+                      >
+                        <div class="icon-plus"></div>
+                        <div class="text-active icon-text">Thêm học vấn</div>
+                      </div>
+                      <!-- Học vấn End -->
+                      <!-- Ngày ứng tuyển và Nguồn ứng viên Start -->
+                      <div class="input-dup">
+                        <div class="dup-row">
+                          <div
+                            class="label-input d-flex justify-content-between"
+                          >
+                            <div>Ngày ứng tuyển</div>
+                          </div>
+
+                          <div
+                            class="field-container d-flex align-items-center"
+                          >
+                            <input
+                              oninput="formatInputTypeOnInputDayMonthYear(this)"
+                              onblur="formatInputTypeOnBlurDayMonthYear(this)"
+                              type="text"
+                              maxlength="10"
+                              role="combobox"
+                              spellcheck="false"
+                              aria-haspopup="true"
+                              class="field-input datetime-input"
+                              autocomplete="off"
+                              id="created-at"
+                              placeholder="dd/MM/yyyy"
+                            />
+                            <div id="calendar" class="calendar-setting pointer">
+                              <div class="icon-calendar-vertical"></div>
+                            </div>
+                            <input type="date" id="realDate" hidden />
+                          </div>
+                          <div
+                            class="error-message d-none"
+                            id="created-at-error-message"
+                          ></div>
+                        </div>
+                        <div class="dup-row">
+                          <div class="label-input">Nguồn ứng viên</div>
+                          <div class="field-container">
+                            <select
+                              class="field-input"
+                              type="text"
+                              id="candidate-resource"
+                            >
+                              <option value="">Chọn nguồn ứng viên</option>
+                              <option value="Group tuyển dụng">
+                                Group tuyển dụng
+                              </option>
+                              <option value="Hội chợ việc làm">
+                                Hội chợ việc làm
+                              </option>
+                              <option value="Website">Website</option>
+                              <option value="Facebook">Facebook</option>
+                              <option value="Zalo">Zalo</option>
+                              <option value="CareerViet">CareerViet</option>
+                              <option value="LinkedIn">LinkedIn</option>
+                              <option value="Careerlink">Careerlink</option>
+                            </select>
+                            <div
+                              class="error-message d-none"
+                              id="candidate-resource-error-message"
+                            ></div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Ngày ứng tuyển và Nguồn ứng viên End -->
+                      <!-- Nhân sự khai thác và Cộng tác viên Start -->
+                      <div class="input-dup">
+                        <div class="dup-row">
+                          <div
+                            class="label-input d-flex justify-content-between"
+                          >
+                            <div>Nhân sự khai thác</div>
+                          </div>
+
+                          <div class="field-container">
+                            <select
+                              class="field-input"
+                              type="text"
+                              id="human-resource"
+                            >
+                              <option value="">Chọn nhân sự khai thác</option>
+                              <option value="Dinh Nga QTHT">
+                                Dinh Nga QTHT
+                              </option>
+                              <option value="Lương Nguyễn">Lương Nguyễn</option>
+                              <option value="Nguyễn Lan Hương">
+                                Nguyễn Lan Hương
+                              </option>
+                              <option value="Nguyễn Văn Công">
+                                Nguyễn Văn Công
+                              </option>
+                              <option value="Nguyễn Thành Chung">
+                                Nguyễn Thành Chung
+                              </option>
+                            </select>
+                            <div
+                              class="error-message d-none"
+                              id="human-resource-error-message"
+                            ></div>
+                          </div>
+                        </div>
+                        <div class="dup-row">
+                          <div class="label-input">Cộng tác viên</div>
+                          <div class="field-container">
+                            <select
+                              class="field-input"
+                              type="text"
+                              id="partner"
+                            >
+                              <option value="">Chọn cộng tác viên</option>
+                              <option value="Tuyển dụng Misa">
+                                Tuyển dụng Misa
+                              </option>
+                            </select>
+                            <div
+                              class="error-message d-none"
+                              id="partner-error-message"
+                            ></div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Nhân sự khai thác và Cộng tác viên End -->
+                      <div
+                        class="checkbox-indetermine d-flex align-items-center mb-2"
+                      >
+                        <input type="checkbox" />
+                        <div class="icon-text">
+                          Thêm nhanh người tham chiếu vào kho ứng viên
+                        </div>
+                      </div>
+                      <div class="d-flex align-items-center pointer mb-2">
+                        <div class="icon-plus"></div>
+                        <div class="text-active icon-text">
+                          Thêm người giới thiệu
+                        </div>
+                      </div>
+                      <!-- Nơi làm việc gần đây start -->
+                      <div class="input-recent-workplace">
+                        <div class="label-input">Nơi làm việc gần đây</div>
+                        <div class="field-container">
+                          <input
+                            class="field-input"
+                            type="text"
+                            maxlength="255"
+                            placeholder="Nhập nơi làm việc gần đây"
+                            id="recent-workplace"
+                          />
+                          <div
+                            class="error-message d-none"
+                            id="recent-workplace-error-message"
+                          ></div>
+                        </div>
+                      </div>
+                      <!-- Nơi làm việc gần đây end -->
+                      <div class="d-flex align-items-center pointer mb-2">
+                        <div class="icon-plus"></div>
+                        <div class="text-active icon-text">
+                          Thêm kinh nghiệm làm việc
+                        </div>
+                      </div>
+                      <!-- Nơi làm việc start -->
+                      <div class="input-workplace">
+                        <div class="label-input">Nơi làm việc</div>
+                        <div class="field-container">
+                          <input
+                            class="field-input"
+                            type="text"
+                            maxlength="255"
+                            placeholder="Nhập nơi làm việc"
+                            id="workplace"
+                          />
+                          <div
+                            class="error-message d-none"
+                            id="workplace-error-message"
+                          ></div>
+                        </div>
+                      </div>
+                      <!-- Nơi làm việc end -->
+                      <!-- Thời gian start -->
+                      <div class="input-dup">
+                        <div class="dup-row">
+                          <div
+                            class="label-input d-flex justify-content-between"
+                          >
+                            <div>Thời gian</div>
+                          </div>
+
+                          <div
+                            class="field-container d-flex align-items-center"
+                          >
+                            <input
+                              oninput="formatInputTypeOnInputMonthYear(this)"
+                              onblur="formatInputTypeOnBlurMonthYear(this)"
+                              type="text"
+                              maxlength="10"
+                              role="combobox"
+                              spellcheck="false"
+                              aria-haspopup="true"
+                              class="field-input datetime-input"
+                              autocomplete="off"
+                              id="time-from"
+                              placeholder="MM/yyyy"
+                            />
+                            <div id="calendar" class="calendar-setting pointer">
+                              <div class="icon-calendar-vertical"></div>
+                            </div>
+                            <input type="date" id="realDate" hidden />
+                          </div>
+                          <div
+                            class="error-message d-none"
+                            id="time-from-error-message"
+                          ></div>
+                        </div>
+                        <div class="dup-row">
+                          <div class="label-input"></div>
+                          <div
+                            class="field-container d-flex align-items-center"
+                          >
+                            <input
+                              oninput="formatInputTypeOnInputMonthYear(this); validateCandidateData();"
+                              onblur="formatInputTypeOnBlurMonthYear(this)"
+                              type="text"
+                              maxlength="10"
+                              role="combobox"
+                              spellcheck="false"
+                              aria-haspopup="true"
+                              class="field-input datetime-input"
+                              autocomplete="off"
+                              id="time-to"
+                              placeholder="MM/yyyy"
+                            />
+                            <div id="calendar" class="calendar-setting pointer">
+                              <div class="icon-calendar-vertical"></div>
+                            </div>
+                            <input type="date" id="realDate" hidden />
+                          </div>
+                          <div
+                            class="error-message d-none"
+                            id="time-to-error-message"
+                          ></div>
+                        </div>
+                      </div>
+                      <!-- Thời gian end -->
+                      <!-- Vị trí công việc start -->
+                      <div class="input-workplace">
+                        <div class="label-input">Vị trí công việc</div>
+                        <div class="field-container">
+                          <input
+                            class="field-input"
+                            type="text"
+                            maxlength="255"
+                            placeholder="Nhập vị trí công việc"
+                            id="position"
+                          />
+                          <div
+                            class="error-message d-none"
+                            id="position-error-message"
+                          ></div>
+                        </div>
+                      </div>
+                      <!-- Vị trí công việc end -->
+                      <!--Mô tả công việc start -->
+                      <div class="input-workplace">
+                        <div class="label-input">Mô tả công việc</div>
+                        <div class="field-container">
+                          <textarea
+                            id="job-description"
+                            type="text"
+                            placeholder="Nhập mô tả công việc"
+                            oninput="autoHeight(this)"
+                          ></textarea>
+                          <div
+                            class="error-message d-none"
+                            id="job-description-error-message"
+                          ></div>
+                        </div>
+                      </div>
+                      <!-- Mô tả công việc end -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <footer>
+            <div class="float-right">
+              <div class="btn-close pointer" onclick="closeModal()">Hủy</div>
+              <div id="save-btn" class="btn btn-primary">Lưu</div>
+            </div>
+          </footer>
+        </div>
+      </div>
+    </div>
+    <!-- Add Candidate Modal End -->
+    <!-- Update Candidate Modal Start -->
+    <div
+      id="update-candidate-modal"
+      class="overlay-modal overlay-modal-hide d-flex justify-content-center align-items-center"
+    >
+      <div class="overlay-modal-content">
+        <div class="modal-container">
+          <div class="modal-header">
+            <div id="title-modal" class="title">
+              Chỉnh sửa thông tin ứng viên
+            </div>
+            <div class="close-icon" onclick="closeModal()"></div>
+          </div>
+          <div class="modal-body">
+            <div class="scroll-view">
+              <div class="scroll-wrapper">
+                <div class="info-candidate">
+                  <div class="avatar-candidate">
+                    <div class="avatar-modal">
+                      <div class="show-image">
+                        <span class="image">Ảnh</span>
+                      </div>
+                      <input type="file" accept="image/*" hidden />
+                    </div>
+                  </div>
+                  <div class="input-info">
+                    <div class="right-content">
+                      <!-- Họ tên Start -->
+                      <div class="input-fullname">
+                        <div class="label-input">
+                          Họ và tên <span class="color-red">*</span>
+                        </div>
+                        <div class="field-container">
+                          <input
+                            id="fullname-update"
+                            class="field-input"
+                            type="text"
+                            maxlength="255"
+                            placeholder="Nhập họ và tên"
+                            oninput="validateCandidateDataUpdateModal()"
+                          />
+                          <div
+                            class="error-message d-none"
+                            id="fullname-update-error-message"
+                          ></div>
+                        </div>
+                      </div>
+                      <!-- Họ tên End -->
+                      <!-- Ngày sinh, giới tính Start -->
+                      <div class="input-dup">
+                        <div class="dup-row">
+                          <div
+                            class="label-input d-flex justify-content-between align-items-flex-start"
+                          >
+                            <div>Ngày sinh</div>
+                            <div class="format-date">
+                              <div
+                                class="dropdown-toggle pointer d-flex align-items-center"
+                                onclick="openDateTimeModal('update')"
+                              >
+                                <b
+                                  class="dropdown-text m-r-8"
+                                  id="dropdown-text-datetime-update"
+                                >
+                                  Ngày tháng năm
+                                </b>
+                                <div class="dropdown-icon"></div>
+                                <!-- dropdown datetime here -->
+                                <div
+                                  id="display-datetime-modal-update"
+                                  class="datetime-dropdown datetime-dropdown-hide"
+                                >
+                                  <div
+                                    class="dropdown-item d-flex align-items-center"
+                                    id="choosed-year"
+                                    onclick="changeInputDateType(this, 'update')"
+                                  >
+                                    <div>Năm</div>
+                                  </div>
+                                  <div
+                                    class="dropdown-item d-flex align-items-center"
+                                    id="choosed-month-year"
+                                    onclick="changeInputDateType(this, 'update')"
+                                  >
+                                    <div>Tháng năm</div>
+                                  </div>
+                                  <div
+                                    class="dropdown-item d-flex align-items-center"
+                                    id="choosed-day-month-year"
+                                    onclick="changeInputDateType(this, 'update')"
+                                  >
+                                    <div>Ngày tháng năm</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="field-container d-flex align-items-center"
+                          >
+                            <input
+                              oninput="formatInputTypeOnInput(this, 'update')"
+                              onblur="formatInputTypeOnBlur(this, 'update')"
+                              type="text"
+                              maxlength="10"
+                              role="combobox"
+                              spellcheck="false"
+                              aria-haspopup="true"
+                              class="field-input"
+                              autocomplete="off"
+                              id="birthdate-update"
+                              placeholder="dd/MM/yyyy"
+                              class="datetime-input"
+                            />
+                            <div id="calendar" class="calendar-setting pointer">
+                              <div class="icon-calendar-vertical"></div>
+                            </div>
+                            <input type="date" id="realDate-update" hidden />
+                          </div>
+                          <div
+                            class="error-message d-none"
+                            id="birthdate-update-error-message"
+                          ></div>
+                        </div>
+                        <div class="dup-row">
+                          <div class="label-input">Giới tính</div>
+                          <div class="field-container">
+                            <select
+                              class="field-input"
+                              type="text"
+                              placeholder="Chọn giới tính"
+                              id="gender-update"
+                            >
+                              <option value="">Chọn giới tính</option>
+                              <option value="Male">Nam</option>
+                              <option value="Female">Nữ</option>
+                            </select>
+                            <div
+                              class="error-message d-none"
+                              id="gender-error-message"
+                            ></div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Ngày sinh, giới tính End -->
+                      <!-- Ngày ứng tuyển và Nguồn ứng viên Start -->
+                      <div class="input-dup">
+                        <div class="dup-row">
+                          <div class="label-input">Nguồn ứng viên</div>
+                          <div class="field-container">
+                            <select
+                              class="field-input"
+                              type="text"
+                              id="candidate-resource-update"
+                            >
+                              <option value="">Chọn nguồn ứng viên</option>
+                              <option value="Group tuyển dụng">
+                                Group tuyển dụng
+                              </option>
+                              <option value="Hội chợ việc làm">
+                                Hội chợ việc làm
+                              </option>
+                              <option value="Website">Website</option>
+                              <option value="Facebook">Facebook</option>
+                              <option value="Zalo">Zalo</option>
+                              <option value="CareerViet">CareerViet</option>
+                              <option value="LinkedIn">LinkedIn</option>
+                              <option value="Careerlink">Careerlink</option>
+                            </select>
+                            <div
+                              class="error-message d-none"
+                              id="candidate-resource-error-message"
+                            ></div>
+                          </div>
+                        </div>
+                        <div class="dup-row">
+                          <div
+                            class="label-input d-flex justify-content-between"
+                          >
+                            <div>Ngày ứng tuyển</div>
+                          </div>
+
+                          <div
+                            class="field-container d-flex align-items-center"
+                          >
+                            <input
+                              oninput="formatInputTypeOnInputDayMonthYear(this)"
+                              onblur="formatInputTypeOnBlurDayMonthYear(this)"
+                              type="text"
+                              maxlength="10"
+                              role="combobox"
+                              spellcheck="false"
+                              aria-haspopup="true"
+                              class="field-input datetime-input"
+                              autocomplete="off"
+                              id="created-at-update"
+                              placeholder="dd/MM/yyyy"
+                            />
+                            <div id="calendar" class="calendar-setting pointer">
+                              <div class="icon-calendar-vertical"></div>
+                            </div>
+                            <input type="date" id="realDate" hidden />
+                          </div>
+                          <div
+                            class="error-message d-none"
+                            id="created-at-error-message"
+                          ></div>
+                        </div>
+                      </div>
+                      <!-- Ngày ứng tuyển và Nguồn ứng viên End -->
+                      <div class="input-area">
+                        <div class="label-input">Khu vực</div>
+                        <div class="field-container d-flex align-items-center">
+                          <select
+                            id="region-update"
+                            class="field-input"
+                            placeholder="Khu vực"
+                          >
+                            <option value="">Chọn khu vực</option>
+                            <option value="Cầu Giấy">Cầu Giấy</option>
+                            <option value="Tây Hồ">Tây Hồ</option>
+                            <option value="Thanh Xuân">Thanh Xuân</option>
+                            <option value="Gia Lâm">Gia Lâm</option>
+                            <option value="Bắc Từ Liêm">Bắc Từ Liêm</option>
+                          </select>
+                          <div class="dictionary-setting pointer">
+                            <div class="icon-more-vertical"></div>
+                          </div>
+                        </div>
+                        <div
+                          class="error-message d-none"
+                          id="region-error-message"
+                        ></div>
+                      </div>
+                      <!-- Nhân sự khai thác và Cộng tác viên Start -->
+                      <div class="label-input d-flex justify-content-between">
+                        <div>Nhân sự khai thác</div>
+                      </div>
+                      <div class="field-container">
+                        <select
+                          class="field-input"
+                          type="text"
+                          id="human-resource-update"
+                        >
+                          <option value="">Chọn nhân sự khai thác</option>
+                          <option value="Dinh Nga QTHT">Dinh Nga QTHT</option>
+                          <option value="Lương Nguyễn">Lương Nguyễn</option>
+                          <option value="Nguyễn Lan Hương">
+                            Nguyễn Lan Hương
+                          </option>
+                          <option value="Nguyễn Văn Công">
+                            Nguyễn Văn Công
+                          </option>
+                          <option value="Nguyễn Thành Chung">
+                            Nguyễn Thành Chung
+                          </option>
+                        </select>
+                        <div
+                          class="error-message d-none"
+                          id="human-resource-error-message"
+                        ></div>
+                      </div>
+
+                      <div class="label-input">Cộng tác viên</div>
+                      <div class="field-container">
+                        <select
+                          class="field-input"
+                          type="text"
+                          id="partner-update"
+                        >
+                          <option value="">Chọn cộng tác viên</option>
+                          <option value="Tuyển dụng Misa">
+                            Tuyển dụng Misa
+                          </option>
+                        </select>
+                        <div
+                          class="error-message d-none"
+                          id="partner-error-message"
+                        ></div>
+                      </div>
+                      <div class="d-flex align-items-center pointer mb-2">
+                        <div class="icon-plus"></div>
+                        <div class="text-active add-new-context">
+                          Thêm người giới thiệu
+                        </div>
+                      </div>
+                      <!-- Nhân sự khai thác và Cộng tác viên End -->
+                    </div>
+                  </div>
+                </div>
+                <div class="candidate-info">
+                  <div class="title-candidate-info">THÔNG TIN LIÊN HỆ</div>
+                  <!-- SĐT, Email Start -->
+                  <div class="row-input">
+                    <div class="label-input d-flex align-items-center">
+                      <div class="icon-phone"></div>
+                      <div class="contact-field">Số điện thoại</div>
+                    </div>
+
+                    <div class="field-container">
+                      <input
+                        type="text"
+                        class="field-input"
+                        id="phone-update"
+                      />
+                    </div>
+                  </div>
+                  <div class="row-input">
+                    <div class="label-input d-flex align-items-center"></div>
+                    <div
+                      class="error-message d-none"
+                      id="phone-update-error-message"
+                    ></div>
+                  </div>
+                  <div class="row-input">
+                    <div class="label-input d-flex align-items-center"></div>
+                    <div class="d-flex align-items-center pointer mb-2">
+                      <div class="icon-plus"></div>
+                      <div class="text-active add-new-context">
+                        Thêm số điện thoại
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row-input">
+                    <div class="label-input d-flex align-items-center">
+                      <div class="icon-email"></div>
+                      <div class="contact-field">Email</div>
+                    </div>
+                    <div class="field-container">
+                      <input
+                        class="field-input"
+                        type="email"
+                        id="email-update"
+                      />
+                    </div>
+                  </div>
+                  <div class="row-input">
+                    <div class="label-input d-flex align-items-center"></div>
+                    <div
+                      class="error-message d-none"
+                      id="email-update-error-message"
+                    ></div>
+                  </div>
+                  <div class="row-input">
+                    <div class="label-input d-flex align-items-center"></div>
+                    <div class="d-flex align-items-center pointer mb-2">
+                      <div class="icon-plus"></div>
+                      <div class="text-active add-new-context">Thêm email</div>
+                    </div>
+                  </div>
+                  <!-- SĐT, Email End -->
+                  <div class="input-address row-input">
+                    <div class="label-input d-flex align-items-center">
+                      <div class="icon-location"></div>
+                      <div class="contact-field">Địa chỉ</div>
+                    </div>
+                    <div class="field-container">
+                      <input
+                        type="text"
+                        class="field-input"
+                        id="address-update"
+                      />
+                    </div>
+                  </div>
+                  <div class="input-address row-input">
+                    <div class="label-input d-flex align-items-center"></div>
+                    <div class="error-message d-none" id="address-error-message"></div>
+                  </div>
+                  <div class="row-input">
+                    <div class="label-input d-flex align-items-center">
+                      <div class="icon-skype"></div>
+                      <div class="contact-field">Skype</div>
+                    </div>
+                    <div class="field-container d-flex gap3">
+                      <input
+                        type="text"
+                        placeholder="Tên hiển thị"
+                        class="field-input"
+                        id="skype-name"
+                      />
+                      <input
+                        type="text"
+                        class="field-input"
+                        id="skype-id"
+                        placeholder="live:"
+                      />
+                    </div>
+                  </div>
+                  <div class="row-input">
+                    <div class="label-input d-flex align-items-center"></div>
+                    <div class="error-message d-none" id="skype-error-message"></div>
+                  </div>
+                  <div class="row-input">
+                    <div class="label-input d-flex align-items-center">
+                      <div class="icon-facebook"></div>
+                      <div class="contact-field">Facebook</div>
+                    </div>
+                    <div class="field-container">
+                      <input
+                        type="text"
+                        class="field-input"
+                        id="link-facebook"
+                      />
+                    </div>
+                  </div>
+                  <div class="row-input">
+                    <div class="label-input d-flex align-items-center"></div>
+                    <div
+                      class="error-message d-none"
+                      id="facebook-error-message"
+                    ></div>
+                  </div>
+                  <div class="row-input">
+                    <div class="label-input d-flex align-items-center">
+                      <div class="icon-zalo"></div>
+                      <div class="contact-field">Zalo</div>
+                    </div>
+                    <div class="field-container">
+                      <input type="text" class="field-input" id="link-zalo" />
+                    </div>
+                  </div>
+                  <div class="row-input">
+                    <div class="label-input d-flex align-items-center"></div>
+                    <div class="error-message d-none" id="zalo-error-message"></div>
+                  </div>
+                  <div class="row-input">
+                    <div class="label-input d-flex align-items-center">
+                      <div class="icon-link"></div>
+                      <div class="contact-field">Liên kết khác</div>
+                    </div>
+                    <div class="field-container">
+                      <input type="text" class="field-input" id="other-link" />
+                    </div>
+                  </div>
+                  <div class="row-input">
+                    <div class="label-input d-flex align-items-center"></div>
+                    <div
+                      class="error-message d-none"
+                      id="other-link-error-message"
+                    ></div>
+                  </div>
+                  <div class="row-input">
+                    <div class="label-input d-flex align-items-center"></div>
+                    <div class="d-flex align-items-center pointer mb-2">
+                      <div class="icon-plus"></div>
+                      <div class="text-active add-new-context">
+                        Thêm đường dẫn
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Học vấn Start -->
+                  <div class="input-college">
+                    <div class="label-input title-candidate-info">HỌC VẤN</div>
+                    <div id="education-input-cluster">
+                      <div class="education-info d-flex gap1">
+                        <div class="row-input">
+                          <div class="label-input d-flex align-items-center">
+                            <div class="icon-circle"></div>
+                            <div class="contact-field">Trình độ đào tạo</div>
+                          </div>
+                          <div
+                            class="field-container d-flex pos-relative align-items-center"
+                          >
+                            <input
+                              id="level-update"
+                              type="text"
+                              class="field-input"
+                              maxlength="255"
+                              placeholder="Nhập trình độ đào tạo"
+                            />
+                            <span class="icon-plus plus-input"></span>
+                            <div class="arrow-setting pointer">
+                              <div class="icon-arrow-down"></div>
+                            </div>
+                            <span
+                              class="icon-sub sub-input sub-input-hide"
+                              onclick="removeEducation(e)"
+                            ></span>
+                          </div>
+                        </div>
+                        <div class="row-input">
+                          <div class="label-input d-flex align-items-center">
+                            <div class="icon-circle"></div>
+                            <div class="contact-field">Nơi đào tạo</div>
+                          </div>
+                          <div
+                            class="field-container d-flex pos-relative align-items-center"
+                          >
+                            <input
+                              id="location-update"
+                              class="field-input"
+                              type="text"
+                              maxlength="255"
+                              placeholder="Nhập nơi đào tạo"
+                            />
+                            <span class="icon-plus plus-input"></span>
+                            <div class="arrow-setting pointer">
+                              <div class="icon-arrow-down"></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row-input">
+                          <div
+                            class="label-input d-flex pos-relative align-items-center"
+                          >
+                            <div class="icon-circle"></div>
+                            <div class="contact-field">Chuyên ngành</div>
+                          </div>
+                          <div
+                            class="field-container d-flex pos-relative align-items-center"
+                          >
+                            <input
+                              id="major-update"
+                              class="field-input"
+                              type="text"
+                              maxlength="255"
+                              placeholder="Nhập chuyên ngành"
+                            />
+                            <span class="icon-plus plus-input"></span>
+                            <div class="arrow-setting pointer">
+                              <div class="icon-arrow-down"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="d-flex align-items-center pointer mb-2">
+                    <div class="icon-plus"></div>
+                    <div class="add-new-context">Thêm học vấn</div>
+                  </div>
+                  <!-- Học vấn End -->
+
+                  <div class="label-input title-candidate-info">
+                    KINH NGHIỆM LÀM VIỆC
+                  </div>
+                  <!-- Nơi làm việc gần đây start -->
+                  <div class="input-recent-workplace row-input mb-5">
+                    <div
+                      class="label-input d-flex pos-relative align-items-center"
+                    >
+                      <div class="icon-circle"></div>
+                      <div class="contact-field">Nơi làm việc gần đây</div>
+                    </div>
+                    <div class="field-container">
+                      <input
+                        class="field-input"
+                        type="text"
+                        maxlength="255"
+                        placeholder="Nhập nơi làm việc gần đây"
+                        id="recent-workplace-update"
+                      />
+                    </div>
+                  </div>
+                  <div class="row-input">
+                    <div class="label-input"></div>
+                    <div class="d-flex align-items-center pointer mb-2">
+                      <div class="icon-plus"></div>
+                      <div class="add-new-context">
+                        Thêm kinh nghiệm làm việc
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Nơi làm việc gần đây end -->
+
+                  <!-- Nơi làm việc start -->
+                  <div class="input-workplace row-input mb-5">
+                    <div
+                      class="label-input d-flex pos-relative align-items-center"
+                    >
+                      <div class="icon-circle"></div>
+                      <div class="contact-field">Nơi làm việc</div>
+                    </div>
+                    <div class="field-container">
+                      <input
+                        class="field-input"
+                        type="text"
+                        maxlength="255"
+                        placeholder="Nhập nơi làm việc"
+                        id="workplace-update"
+                      />
+                    </div>
+                  </div>
+                  <!-- Nơi làm việc end -->
+                  <!-- Thời gian start -->
+                  <div class="row-input mb-5">
+                    <div
+                      class="label-input d-flex pos-relative align-items-center"
+                    >
+                      <div class="icon-circle"></div>
+                      <div class="contact-field">Thời gian</div>
+                    </div>
+                    <div class="d-flex align-items-center gap3">
+                      <div class="field-container d-flex align-items-center">
+                        <input
+                          oninput="formatInputTypeOnInputMonthYear(this)"
+                          onblur="formatInputTypeOnBlurMonthYear(this)"
+                          type="text"
+                          maxlength="10"
+                          role="combobox"
+                          spellcheck="false"
+                          aria-haspopup="true"
+                          class="field-input datetime-input"
+                          autocomplete="off"
+                          id="time-from-update"
+                          placeholder="MM/yyyy"
+                        />
+                        <div id="calendar" class="calendar-setting pointer">
+                          <div class="icon-calendar-vertical"></div>
+                        </div>
+                        <input type="date" id="realDate" hidden />
+                      </div>
+                      <div class="d-flex align-items-center fs-20">-</div>
+
+                      <div class="field-container d-flex align-items-center">
+                        <input
+                          oninput="formatInputTypeOnInputMonthYear(this); validateCandidateData();"
+                          onblur="formatInputTypeOnBlurMonthYear(this)"
+                          type="text"
+                          maxlength="10"
+                          role="combobox"
+                          spellcheck="false"
+                          aria-haspopup="true"
+                          class="field-input datetime-input"
+                          autocomplete="off"
+                          id="time-to-update"
+                          placeholder="MM/yyyy"
+                        />
+                        <div id="calendar" class="calendar-setting pointer">
+                          <div class="icon-calendar-vertical"></div>
+                        </div>
+                        <input type="date" id="realDate" hidden />
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Thời gian end -->
+                  <!-- Vị trí công việc start -->
+                  <div class="input-workplace row-input mb-5">
+                    <div
+                      class="label-input d-flex pos-relative align-items-center"
+                    >
+                      <div class="icon-circle"></div>
+                      <div class="contact-field">Vị trí công việc</div>
+                    </div>
+                    <div class="field-container">
+                      <input
+                        class="field-input"
+                        type="text"
+                        maxlength="255"
+                        placeholder="Nhập vị trí công việc"
+                        id="position-update"
+                      />
+                    </div>
+                  </div>
+                  <!-- Vị trí công việc end -->
+                  <!--Mô tả công việc start -->
+                  <div class="input-workplace row-input">
+                    <div
+                      class="label-input d-flex pos-relative align-items-center"
+                    >
+                      <div class="icon-circle"></div>
+                      <div class="contact-field">Mô tả công việc</div>
+                    </div>
+                    <div class="field-container">
+                      <textarea
+                        id="job-description-update"
+                        type="text"
+                        placeholder="Nhập mô tả công việc"
+                        oninput="autoHeight(this)"
+                      ></textarea>
+                      <div
+                        class="error-message d-none"
+                        id="job-description-error-message"
+                      ></div>
+                    </div>
+                  </div>
+                  <!-- Mô tả công việc end -->
+                  <div class="label-input title-candidate-info">
+                    TRƯỜNG TÙY CHỈNH
+                  </div>
+                  <div class="row-input">
+                    <div class="label-input"></div>
+                    <div class="d-flex align-items-center pointer">
+                      <div class="icon-plus"></div>
+                      <div class="add-new-context">Thêm trường tùy chỉnh</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <footer>
+            <div class="float-right">
+              <div class="btn-close pointer" onclick="closeModal()">Hủy</div>
+              <div id="update-btn" class="btn btn-primary">Lưu</div>
+            </div>
+          </footer>
+        </div>
+      </div>
+    </div>
+    <!-- Update Candidate Modal End -->
+
+    <!-- ==================== END MODALS SECTION ==================== -->
+
+    <!-- ==================== JAVASCRIPT FILES SECTION ==================== -->
+
+    <script src="../js/core/utils.js"></script>
+    <script src="../js/service/seedData.js"></script>
+    <script src="../js/core/main.js"></script>
+    <script src="../js/modules/validation.js"></script>
+    <script src="../js/modules/candidatesManagement.js"></script>
+    <script src="../js/components/toast.js"></script>
+
+    <!-- ==================== END JAVASCRIPT FILES SECTION ==================== -->
+  </body>
+</html>
